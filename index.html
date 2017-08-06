@@ -12,17 +12,14 @@
   background-color:lightgrey;
   padding: 100px 50px;
 }
-
 .bg-grey{
   background-color:lightgrey;
 }
-
 .transparent-logo{
   background-color:transparent;
   height:200px;
   width:200px;
 }
-
 /*
 Modal Section
 */
@@ -31,9 +28,7 @@ Modal Section
     cursor: pointer;
     transition: 0.3s;
 }
-
 .myImg:hover {opacity: 0.7;}
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -48,7 +43,6 @@ Modal Section
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
-
 /* Modal Content (image) */
 .modal-content {
     margin: auto;
@@ -56,7 +50,6 @@ Modal Section
     width: 80%;
     max-width: 700px;
 }
-
 /* Caption of Modal Image */
 #caption {
     margin: auto;
@@ -68,7 +61,6 @@ Modal Section
     padding: 10px 0;
     height: 150px;
 }
-
 /* Add Animation */
 .modal-content, #caption {
     -webkit-animation-name: zoom;
@@ -76,17 +68,14 @@ Modal Section
     animation-name: zoom;
     animation-duration: 0.6s;
 }
-
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)}
     to {-webkit-transform:scale(1)}
 }
-
 @keyframes zoom {
     from {transform:scale(0)}
     to {transform:scale(1)}
 }
-
 /* The Close Button */
 .close {
     position: absolute;
@@ -97,20 +86,23 @@ Modal Section
     font-weight: bold;
     transition: 0.3s;
 }
-
 .close:hover,
 .close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 }
-
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 100%;
     }
 }
+
+.myImages{
+  display:none;
+}
+
 </style>
 </head>
 
@@ -216,11 +208,11 @@ Modal Section
   <br>
   <div class="row">
     <div class="col-sm-4">
-      <img id = "image1" class ="myImg" src="objectivec.png" alt="Earth Protector" width ="300" height="200">
+      <img src="objectivec.png" alt="Earth Protector" width ="300" height="200" onclick="openModal();currentImage(1)">
       <h4>Earth Protector</h4>
     </div>
     <div class ="col-sm-4">
-      <img id="image2" class="myImg" src="Paintprogram.png" alt="Paint Program" width="300" height="200">
+      <img src="Paintprogram.png" alt="Paint Program" width="300" height="200"onclick="openModal();currentImage(2)">
       <h4>Paint Program</h4>
     </div>
   </div>
@@ -248,15 +240,50 @@ Modal Section
 
   <!-- The Modal -->
   <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+      <div class="myImages">
+        <img src="objectivec.png">
+      </div>
+
+      <div class="myImages">
+        <img src="Paintprogram.png">
+    </div>
   </div>
 
   <script>
+  function openModal(){
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  function closeModal(){
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var pictureIndex = 1;
+  showPicture(pictureIndex);
+
+  function currentImage(n){
+    showPictures(pictureIndex = n);
+  }
+
+  function showPictures(n){
+    var i;
+    var images = document.getElementsByClassName("myImages");
+    var captionText = document.getElementById("caption");
+    if (n > images.length) {pictureIndex = 1}
+    if (n < 1) {pictureIndex = images.length}
+    for (i = 0; i < images.length; i++){
+      images[i].style.display = "none";
+    }
+    images[pictureIndex-1].style.display = "block";
+  }
+
+
+  /*
   // Get the modal
   var modal = document.getElementById('myModal');
-
   // Get the image and insert it inside the modal - use its "alt" text as a caption
   var img = document.getElementById('image1');
   var modalImg = document.getElementById("img01");
@@ -266,14 +293,14 @@ Modal Section
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
   }
-
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
-
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
       modal.style.display = "none";
   }
+  */
+
   </script>
 
 </body>
