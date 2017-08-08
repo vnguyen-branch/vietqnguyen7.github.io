@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Viet Nguyen Portfolio</title>
   <meta charset="utf-8">
@@ -8,25 +7,29 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-
 <style>
 .jumbotron {
-  background-color:lightgrey;
+  background-color:#4ABDAC;
   padding: 100px 50px;
+  color: white;
 }
-
 .bg-grey{
-  background-color:lightgrey;
+  background-color:#FFFFFF;
 }
-
-
 .transparent-logo{
-  background-color:transparent;
-  height:200px;
-  width:200px;
+  border-radius:50%;
+  height:100px;
+  width:100px;
 }
+
+.font{
+  color:black;
+  font-family:"helvetica";
+}
+
+
 </style>
+</head>
 
 <body id ="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
   <nav class="nav navbar-inverse navbar-fixed-top">
@@ -50,9 +53,9 @@
               <span class ="caret"></span>
             </a>
             <ul class = "dropdown-menu">
-              <li><a href="#CPrograms">C Projects</a></li>
-              <li><a href="#JavaPrograms">Java Projects</a></li>
-              <li><a href="#PythonPrograms">Python Projects</a></li>
+              <li><a href="#CProjects">C Projects</a></li>
+              <li><a href="#JavaProjects">Java Projects</a></li>
+              <li><a href="#PythonProjects">Python Projects</a></li>
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
@@ -62,76 +65,58 @@
   </nav>
 
   <div class="jumbotron text-center">
-    <h1>Viet Nguyen Portfolio</h1>
-      <p>A place with all of my projects</p>
+    <h1><b>Viet Nguyen Portfolio</b></h1>
+      <p>SuperCoder</p>
   </div>
 
+
 <!-- Container (About Section) -->
-<div id="aboutme" class="container-fluid">
+<div id="wholepage" class ="bg-grey">
+<div id="aboutme" class="container-fluid font">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Me</h2><br>
+      <h2><b>About Me</b></h2><br>
       <h4>Junior developer who recently graduated from San Jose State University.</h4><br>
       <p>My name is Viet Nguyen. I am a Software Developer with a Bachelor's in Computer Science. I've been working on computers studying the hardware and software
         extensively since the age of 3. I am an avid gamer and I love to watch movies.</p>
+        <h2><b> Technical Skills </b></h2><br>
+      <img src="java.png" class="transparent-logo img-thumbnail">
+      <img src="C.png" class="transparent-logo img-thumbnail">
+      <img src="python.png" class="transparent-logo img-thumbnail">
+      <img src="javascript.png" class="transparent-logo img-thumbnail"><br>
+      <img src="html.png" class="transparent-logo img-thumbnail">
+      <img src="SQL.png" class="transparent-logo img-thumbnail">
+      <img src="php.png" class="transparent-logo img-thumbnail">
+      <img src="objectivec.png" class="transparent-logo img-thumbnail">
     </div>
     <div class="col-sm-4">
       <img src="mypicture.jpg" class = "img-thumbnail">
     </div>
+
   </div>
 </div>
 
-<!-- Skills portion -->
-<div id="skills" class="container-fluid text-center bg-grey">
-  <h2>Skills</h2>
-  <br>
-  <h3>Languages</h3>
-  <div class="row text-center">
-    <div  class="col-sm-3">
-      <img src="java.png" class="transparent-logo img-thumbnail">
-      <h4>Java</h4>
-    </div>
-    <div  class="col-sm-3">
-      <img src="C.png" class="transparent-logo img-thumbnail">
-      <h4>C</h4>
-    </div>
-    <div  class="col-sm-3">
-      <img src="javascript.png" class="transparent-logo img-thumbnail">
-      <h4>Javascript</h4>
-    </div>
-    <div  class="col-sm-3">
-      <img src="html.png" class="transparent-logo img-thumbnail">
-      <h4>HTML</h4>
-    </div>
-    <div  class="col-sm-3">
-      <img src="python.png" class="transparent-logo img-thumbnail">
-      <h4>Python</h4>
-    </div>
-    <div  class="col-sm-3">
-      <img src="SQL.png" class="transparent-logo img-thumbnail">
-      <h4>Javascript</h4>
-    </div>
-    <div  class="col-sm-3">
-      <img src="php.png" class="transparent-logo img-thumbnail">
-      <h4>PHP</h4>
-    </div>
-    <div  class="col-sm-3">
-      <img src="objectivec.png" class="transparent-logo img-thumbnail">
-      <h4>Objective-C</h4>
-    </div>
-  </div>
-</div>
+
+
 
   <!-- Container (C Projects Section) -->
-<div id="Projects" class="container-fluid text-center">
-  <h2>Projects</h2>
+  <div id="Projects" class = "font">
+<div id="CProjects" class="container-fluid text-center">
+  <h2><b>Projects</b></h2>
   <br><br>
-    <h3>C Projects</h3>
-    <br>
-    <div class="row">
-      <div class="col-sm-4">
-      </div>
+  <h3>C Projects</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="https://github.com/vietqnguyen7/EarthProtector" target="_blank"><img src="earthprotector.png" alt="Earth Protector" width ="300" height="200"></a>
+      <h4>Earth Protector</h4>
     </div>
+
+    <div class ="col-sm-4">
+      <a href="https://github.com/vietqnguyen7/Paint-Program" target="_blank"><img src="Paintprogram.PNG" alt="Paint Program" width="300" height="200"></a>
+      <h4>Paint Program</h4>
+    </div>
+  </div>
 
     <!-- Container (Java Projects Section) -->
     <div id="JavaProjects" class="container-fluid text-center">
@@ -139,6 +124,8 @@
       <br>
       <div class="row">
         <div class="col-sm-4">
+          <a href="https://github.com/vietqnguyen7/SlotMachine" target="_blank"><img src="Slotmachine.png" alt="Paint Program" width="300" height="200"></a>
+          <h4>Slot Machine</h4>
         </div>
       </div>
 
@@ -149,9 +136,22 @@
         <div class="row">
         <div class="col-sm-4">
           </div>
-</div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+  <div id="Contact" class ="container-fluid text-center jumbotron">
+    <h1><b>Contact me</b></h1>
+    <a href="mailto:vietqnguyen7@gmail.com"><img src="email.png" alt="Email Link" width="50" height="50"></a>
+    <a href="https://www.linkedin.com/in/vietnguyen5/" target="_blank"><img src="linkedin.png" alt="Linkedin Link" width="50" height="50"></a>
+    <a href="https://github.com/vietqnguyen7/" target="_blank"><img src="contactgithub.png" alt="Github Link" width="50" height="50"></a>
+
+
+  </div>
+
+  </div>
+</div>
 </body>
 </html>
