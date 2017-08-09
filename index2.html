@@ -14,7 +14,7 @@ body,html{
 }
 
 .jumbotron{
-  background-image:url("http://www.wallpapermade.com/images/wallpapers/originals/amazing-nature-scenery-wallpaper-5431.jpg");
+  background-image:url("home.jpg");
   height:100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +38,12 @@ body,html{
   border:5px solid white;
 }
 
+.bg-grey{
+  background-color:white;
+}
+
 input{
+  position:relative;
   font-size:20px;
   font-weight:bold;
   text-align:center;
@@ -64,9 +69,10 @@ header {
 
 <div class="jumbotron">
   <div class="text-center center">
-  <img class ="img-rescale img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/0b5/0ae/2b45dc4.jpg"></img>
+  <img class ="img-rescale img-circle" src="face.png"></img>
   <h2><b>Viet Nguyen</b></h2>
-    <Input type="text" name="password" placeholder="Password"/></input>
+    <Input type="text" placeholder="Password" size="15"></input>
+    <Input type="submit" img="submit.png"></input>
   </div>
   <!-- Begin Navbar -->
 
@@ -78,6 +84,32 @@ header {
   <div id="nav">
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#myPage">Viet Nguyen</a>
+        </div>
+        <div class = "collapse navbar-collapse" id = "myNavBar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class= "dropdown">
+              <a class = "dropdown-toggle" data-toggle="dropdown" href="#">Info
+                <span class ="caret"></span>
+              </a>
+              <ul class = "dropdown-menu">
+                <li><a href="#aboutme">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+              </ul>
+            </li>
+            <li class= "dropdown">
+              <a class = "dropdown-toggle" data-toggle="dropdown" href="#">Projects
+                <span class ="caret"></span>
+              </a>
+              <ul class = "dropdown-menu">
+                <li><a href="#CProjects">C Projects</a></li>
+                <li><a href="#JavaProjects">Java Projects</a></li>
+                <li><a href="#PythonProjects">Python Projects</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </div>
       </div>
 
     </div><!-- /.navbar -->
@@ -248,6 +280,30 @@ header {
 </body>
 
 <script>
+
+
+(function ($) {
+  $(document).ready(function(){
+
+	// hide .navbar first
+	$(".navbar").hide();
+
+	// fade in .navbar
+	$(function () {
+		$(window).scroll(function () {
+            // set distance user needs to scroll before we fadeIn navbar
+			if ($(this).scrollTop() > 1200) {
+				$('.navbar').fadeIn();
+			} else {
+				$('.navbar').fadeOut();
+			}
+		});
+
+
+	});
+
+});
+  }(jQuery));
 
 $('#nav').affix({
       offset: {
