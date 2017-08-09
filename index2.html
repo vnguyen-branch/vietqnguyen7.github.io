@@ -106,8 +106,10 @@ input{
   <div class="text-center center">
   <img class ="img-rescale img-circle" src="face.png"></img>
   <h2><b>Viet Nguyen</b></h2>
-    <Input type="text" placeholder="Password" size="15"></input>
+    <Input type="text" placeholder="Password" id="password" size="15"></input>
     <Input type="submit" img="submit.png"></input>
+      <br>
+    <input type="checkbox" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'" checked> Show password
   </div>
   <!-- Begin Navbar -->
 
