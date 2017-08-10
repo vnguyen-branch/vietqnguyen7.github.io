@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 
-html, body {margin: 0; height: 100%; overflow:hidden}
+html, body {margin: 0; height: 100%;}
 
 /* Home Page CSS */
 /* Handles the picture and makes it fit the screen size of the window */
@@ -162,7 +162,7 @@ input{
 
 //Typing Animation
 $(document).ready(function(){
-
+$("#information").hide(0);
 value = "SuperCoder";
 value.split("").forEach(function(elem, index){
   setTimeout(function(){
@@ -178,9 +178,7 @@ function checkPassword(){
   if(document.getElementById('password').value === 'SuperCoder'){
     document.getElementById('demo').innerHTML = document.getElementById('password').value;
     $('#splashscreen').fadeOut(1000);
-    $("#information").hide(0).delay(500).fadeIn(1500,function(){
-      $("html, body").css('overflow','scroll');
-    });
+    $("#information").delay(500).fadeIn(1500);
   }
 }
 
@@ -206,16 +204,14 @@ function compressNav() {
 function runSplash(){
   $('#information').fadeOut(1000)
   $('#splashscreen').fadeIn(1000)
-  $("html, body").css('overflow','hidden');
 }
 
 //Animated scrolling script
 $(document).on('click', 'a', function(event){
     event.preventDefault();
-
     $('html, body').animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
+    }, 1000);
 });
 
 </script>
