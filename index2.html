@@ -108,7 +108,7 @@ input{
     <img class ="img-rescale img-circle" src="face.png"></img>
     <h2 id="demo"><b>Viet Nguyen</b></h2>
       <Input type="text" placeholder="Password" id="password" size="15"></input>
-      <Input type="submit" onclick="checkPassword()"></input>
+      <Input id="submit_button" type="submit" onclick="checkPassword()"></input>
         <br>
       <input type="checkbox" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'" checked> Show password
     </div>
@@ -294,7 +294,7 @@ input{
 function checkPassword(){
   if(document.getElementById('password').value === 'SuperCoder'){
     document.getElementById('demo').innerHTML = document.getElementById('password').value;
-    $('#splashscreen').fadeOut(500);
+    $('#splashscreen').fadeOut(1000);
     $("html, body").css('overflow','scroll');
   }
 }
@@ -308,6 +308,13 @@ function compressNav() {
     }
 }
 
+function autoSubmit(){
+  setTimeout(function(){
+    document.getElementById('submit_button').click();
+  },1500);
+
+}
+
 //Typing Animation
 $(document).ready(function(){
 
@@ -318,8 +325,8 @@ value.split("").forEach(function(elem, index){
         $("input[type='text']").val($("input[type='text']").val()+elem);
     }, index* 100);
     $("input[type=text]").focus();
+    autoSubmit();
 });
 });
-
 </script>
 </html>
