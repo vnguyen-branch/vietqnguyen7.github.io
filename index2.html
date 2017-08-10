@@ -14,6 +14,7 @@ html, body {margin: 0; height: 100%; overflow:hidden}
 /* Home Page CSS */
 /* Handles the picture and makes it fit the screen size of the window */
 #splashscreen{
+  position:relative;
   display:block;
   background-image:url("home.jpg");
   height:100%;
@@ -21,7 +22,9 @@ html, body {margin: 0; height: 100%; overflow:hidden}
   background-repeat: no-repeat;
   background-size: cover;
   text-underline-position: : center;
+
 }
+
 
 /* Centers the picture and text in the middle of the screen vertically */
 .center{
@@ -103,7 +106,7 @@ input{
 </head>
 <body>
 
-  <div id= "splashscreen">
+  <div id= "splashscreen" >
     <div class="text-center center">
     <img class ="img-rescale img-circle" src="face.png"></img>
     <h2 id="demo"><b>Viet Nguyen</b></h2>
@@ -114,6 +117,7 @@ input{
     </div>
   </div>
 
+<div id="information">
   <div class="topnav" id="myTopnav">
     <a href="#home">Home</a>
     <a href="#news">News</a>
@@ -126,7 +130,6 @@ input{
 
   <!-- FILLER -->
   <!-- Container (About Section) -->
-  <div id="wholepage" class ="bg-grey">
   <div id="aboutme" class="container-fluid font">
     <div class="row">
       <div class="col-sm-8">
@@ -286,16 +289,18 @@ input{
 
 
     </div>
-
 </body>
 
 <script>
+
 
 function checkPassword(){
   if(document.getElementById('password').value === 'SuperCoder'){
     document.getElementById('demo').innerHTML = document.getElementById('password').value;
     $('#splashscreen').fadeOut(1000);
-    $("html, body").css('overflow','scroll');
+    $("#information").hide(0).delay(500).fadeIn(2000,function(){
+      $("html, body").css('overflow','scroll');
+    });
   }
 }
 
@@ -325,8 +330,10 @@ value.split("").forEach(function(elem, index){
         $("input[type='text']").val($("input[type='text']").val()+elem);
     }, index* 100);
     $("input[type=text]").focus();
+});
     autoSubmit();
 });
-});
+
+
 </script>
 </html>
