@@ -34,6 +34,16 @@ html, body {margin: 0; height: 100%;}
   background-size: cover;
 }
 
+.parallax2{
+  position:relative;
+  background-image: url("projects.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .parallax-text{
   position:relative;
   color: white;
@@ -43,6 +53,15 @@ html, body {margin: 0; height: 100%;}
   transform:translateY(-50%);
 }
 
+.center-page{
+    position:absolute;
+    height: X px;
+    width: Y px;
+    left:50%;
+    top:50%;
+    margin-top:- X/2 px;
+    margin-left:- Y/2 px;
+}
 /* Centers the picture and text in the middle of the screen vertically */
 .center{
   position:relative;
@@ -71,6 +90,28 @@ input{
   background-color:black;
 }
 
+.sectionPadding{
+  padding-top:100px;
+  padding-right:30px;
+  padding-bottom:100px;
+  padding-left:30px;
+}
+
+.div-parameters{
+  background-color:#1B1B1B;
+  color:white;
+}
+
+.boxed {
+  font-size:20px;
+  border: 1px solid white;
+}
+
+.project-img {
+   max-width:100%;
+   height:auto;
+   max-height:100%;
+}
 
 </style>
 </head>
@@ -88,38 +129,95 @@ input{
   </div>
 
 <div id="information">
-<div class="parallax">Aboutme
-  <h1 class="text-center parallax-text">Software Developer</h1>
-</div>
 
   <!-- Container (About Section) -->
-  <div id="aboutme" class="container-fluid font">
+  <div id="aboutme" class="container-fluid text-center sectionPadding div-parameters">
     <div class="row">
-      <div class="col-sm-8">
-        <h4>Junior developer who recently graduated from San Jose State University.</h4><br>
-        <p>My name is Viet Nguyen. I am a Software Developer with a Bachelor's in Computer Science. I've been working on computers studying the hardware and software
-          extensively since the age of 3. I am an avid gamer and I love to watch movies.</p>
-          <h2><b> Technical Skills </b></h2><br>
-        <img src="java.png" class="transparent-logo img-thumbnail">
-        <img src="C.png" class="transparent-logo img-thumbnail">
-        <img src="python.png" class="transparent-logo img-thumbnail">
+      <div class="col-sm-5">
+        <h1 style="font-size:100px">Hello World!</h1>
+        <h2>I am Viet. A software developer.</h2><br>
+        <p style="font-size:18px;">I am a 2016 graduate from San Jose State University with a Bachelor's degree in Computer Science. I am a Back End Developer. I love to solve complex puzzles.
+        If i'm not staring at codes all day long i'm probably playing video games, watching a movie or playing with my dog.</p>
       </div>
-      <div class="col-sm-4">
-        <img src="mypicture.jpg" class = "img-thumbnail">
-      </div>
-
+      <div class="col-sm-7">
+        <img src="mypicture.jpg" class="img-circle" style="width:300px; height:400px;"></img>
+        <img src="Loki.jpg" class="img-circle" style="width:400px; height:300px; transform:rotate(90deg);"></img>
     </div>
   </div>
+</div>
 
-  <div id="contact" class ="container-fluid text-center">
+  <div class="parallax">
+    <h1 class="text-center parallax-text">Skills</h1>
+  </div>
+
+  <div id="skills" class="container-fluid text-center sectionPadding div-parameters">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Languages</h1>
+        <p class= "boxed">C</p>
+        <p class= "boxed">Java</p>
+        <p class= "boxed">Python</p>
+        <p class= "boxed">JavaScript</p>
+        <p class= "boxed">HTML</p>
+        <p class= "boxed">PHP</p>
+        <p class= "boxed">SQL</p>
+        <p class= "boxed">Objective-C</p>
+      </div>
+      <div class="col-sm-6">
+        <h1>Tools</h1>
+        <p class= "boxed">Git + Github</p>
+        <p class= "boxed">Microsoft Office</p>
+        <p class= "boxed">Photoshop</p>
+        <p class= "boxed">Eclipse</p>
+        <p class= "boxed">AGILE</p>
+        <p class= "boxed">XCode</p>
+      </div>
+  </div>
+</div>
+
+<div class="parallax2">
+  <h1 class="text-center parallax-text">Projects</h1>
+</div>
+
+<div id="projects" class="container-fluid text-center sectionPadding div-parameters">
+
+      <a href="https://github.com/vietqnguyen7/EarthProtector" target="_blank">
+        <img src="earthprotector.png" href="" class="project-img"></img></a>
+      <h1>Earth Protector</h1>
+      <h4>2D Endless game developed on Unity</h4>
+      <p>The game was designed to last for as long as the player can survive.
+        The player is to protect Earth from bullets shot from the alien's ships. The game is also built to run on
+        Android.</p>
+        <br><br>
+
+      <a href="https://github.com/vietqnguyen7/Paint-Program" target="_blank">
+      <img src="Paintprogram.png" class="project-img"></img></a>
+      <h1>Paint Program</h1>
+      <h4>Paint program written in C</h4>
+      <p>A paint program written in the C language, that can handle simple tasks like draw a line,
+        bezier curve, rectangle, or circle</p>
+        <br><br>
+
+      <a href="https://github.com/vietqnguyen7/SlotMachine" target="_blank">
+        <img src="Slotmachine.png" class="project-img"></img></a>
+      <h1>Slot Machine</h1>
+      <h4>Slot machine written in Java</h4>
+      <p>A working slot machine game that has different skins. The goal is to
+        spin the wheels and match the pictures in a row. This program follows the Model-View-Controller model</p>
+
+</div>
+
+  <div id="contact" class ="container-fluid text-center" style="padding-top:100px; padding-bottom:100px;">
     <h1><b>Contact me</b></h1>
     <a href="mailto:vietqnguyen7@gmail.com"><img src="email.png" alt="Email Link" width="50" height="50"></a>
     <a href="https://www.linkedin.com/in/vietnguyen5/" target="_blank"><img src="linkedin.png" alt="Linkedin Link" width="50" height="50"></a>
     <a href="https://github.com/vietqnguyen7/" target="_blank"><img src="contactgithub.png" alt="Github Link" width="50" height="50"></a>
+    <a href="Viet_Nguyen_Resume.pdf" target="_blank"><img src="resume.png" alt="Resume Link" width="50" height="50"></a>
   </div>
 
 
 </div>
+
 </body>
 
 <script>
@@ -140,7 +238,6 @@ value.split("").forEach(function(elem, index){
 //Compares password to access website
 function checkPassword(){
   if(document.getElementById('password').value === 'SuperCoder'){
-    document.getElementById('demo').innerHTML = document.getElementById('password').value;
     $('#splashscreen').fadeOut(1000);
     $("#information").delay(500).fadeIn(1500);
   }
@@ -152,16 +249,6 @@ function autoSubmit(){
     document.getElementById('submit_button').click();
   },1500);
 
-}
-
-//Compreeses Navigationbar for mobiles or small windows
-function compressNav() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
 }
 
 //Opens the splashscreen again.
