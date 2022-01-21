@@ -1,282 +1,210 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel=“icon” type=“image/png” href=“https://branch.io/img/favicon/favicon-32x32.png”>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="branch:deeplink:deeplink_path" content="food/1234?link_click_id=link-897734884739033158"/>
-  <title></title>
-  <script>
-    // load Branch
-    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-    // init Branch
-    branch.init('key_live_pi9fdajuaEfGhtZjFYyu4opoBFd5ZhmV');
-  </script>
-  
-  <title>Viet Nguyen</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:description" content="some content here"/>
 
-html, body {margin: 0; height: 100%;}
-/* Home Page CSS */
-/* Handles the picture and makes it fit the screen size of the window */
-#splashscreen{
-  position:relative;
-  display:block;
-  background-image:url("home.jpg");
-  height:100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-underline-position: : center;
 
-}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-.parallax{
-  position:relative;
-  background-image: url("parallax1.jpg");
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
 
-.parallax2{
-  position:relative;
-  background-image: url("projects.jpg");
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
 
-.parallax-text{
-  position:relative;
-  color: white;
-  font-size: 100px;
-  font-family:"Bauhaus 93";
-  top:50%;
-  transform:translateY(-50%);
-}
+  // branch.setIdentity("suuid", (err) => console.error(err));
+  branch.init('YOUR KEY HERE', function(err, data) {
+  });
+  branch.setBranchViewData({
+    data: {
+      // 'foo': 'SetDataTest'
+    }
+  });
+  var thisListener = function(event, data) { 
+      window.journeyData = data;
+      console.log("event " + JSON.stringify(event));
+      console.log("data " + JSON.stringify(data));
+      // sendData(event, data);
+  }
 
-.center-page{
-    position:absolute;
-    height: X px;
-    width: Y px;
-    left:50%;
-    top:50%;
-    margin-top:- X/2 px;
-    margin-left:- Y/2 px;
-}
-/* Centers the picture and text in the middle of the screen vertically */
-.center{
-  position:relative;
-  top:50%;
-  transform:translateY(-50%);
-  color:white;
-}
+  // branch.addListener('didShowJourney', thisListener); //A listener for a Journey impression
+  function sendData (event, data) {
+    // var journey_variation = data.journey_link_data.tags;
+    // var journey_id = data.journey_link_data.journey_id;
+    // var journey_name = data.journey_link_data.journey_name;
+    // // var userId = dataLayer.userId;
+    // var classpass_id = "FOO" //REPLACE "FOO" WITH YOUR ID
 
-/* Resized the portfolio picture to scale with the window changing */
-.img-rescale{
-  max-width:25%;
-}
+    // console.log(journey_variation, journey_id, journey_name);
 
-/* Change the picture into a circle */
-.img-circle{
-  border-radius:50%;
-  border:5px solid white;
-}
+    // var custom_data = {
+    //   "variation": journey_variation,
+    //   "journey_id": journey_id,
+    //   "journey_name": journey_name,
+    //   "classpass_id": classpass_id
+    // }
+    branch.logEvent(
+      "homepage_view",
+      //custom_data,
+      function(err) { console.log(err);}
+    );
+  };
 
-/*Changes the text fields font and size and some other variables */
-input{
-  position:relative;
-  font-size:20px;
-  font-weight:bold;
-  text-align:center;
-  background-color:black;
-}
+  // branch.addListener('didShowJourney', thisListener); //A listener for showing a banner
 
-.sectionPadding{
-  padding-top:100px;
-  padding-right:30px;
-  padding-bottom:100px;
-  padding-left:30px;
-}
+  // function setTheData () {
+  //   console.log("setting");
+  //   branch.closeJourney();
+  //   branch.setBranchViewData({
+      
+  //     data: {
+  //       '~campaign': 'SetDataTest'
+  //     }
+  //   });
+  // };
 
-.div-parameters{
-  background-color:#1B1B1B;
-  color:white;
-}
+  function buyEvent () {
+    console.log("buying");
+    var commerce_data = {"revenue":28.45,
+      "currency":"USD",
+      "transaction_id":"313299",
+      "shipping":5.95,
+      "tax":0,
+      //"~referring_link":"379998049730159899",
+      "products":[{"sku":"xbar1788","name":"SAFTB Golf Towel - GOLF / SAFTB","price":25,"quantity":1,"category":"","variant":"GOLF / SAFTB"}]
+    };
+    var metadata =  {};
+    branch.trackCommerceEvent('purchase', commerce_data, metadata, function(err) {
+        if(err) {
+             throw err;
+        }
+    });
+  };
+  function showJourney () {
+    console.log("showing");
+    branch.init('key_live_gchnKkd3l3m9YBPP2d73jmfejkcgVjgM', function(err, data) {
+      branch.closeJourney(
+        function(err) { 
+          branch.track('pageview', null, {'branch_view_id': '411594526336324610'});
+          console.log(err); 
+        }
+      );
+      
+    });
+  };
+  function setTheIdentity () {
+    console.log("setting the identity");
+    // var timestamp = Math.round(+new Date()/1000);
+    // var id = timestamp.toString();
+    branch.setIdentity("suuid", function (err, data) {
+      console.log(err, data);
+    });
+  };
 
-.boxed {
-  font-size:20px;
-  border: 1px solid white;
-}
+  function logTheUserOut () {
+    console.log("logging out identity");
+    branch.logout(function(err){
+      console.log(err);
+    });
+  };
 
-.project-img {
-   max-width:100%;
-   height:auto;
-   max-height:100%;
-}
+  function getTheLATD () {
+    branch.lastAttributedTouchData(function (err, data){console.log(data);});
+  };
 
-</style>
-    
+  function makeLink () {
+    var canonicalURL = window.location.href;
+    var linkData = {
+      "$canonical_url": canonicalURL,
+      "campaign":"TTSite"
+    };
+
+    branch.link(linkData, function(err, link) {
+                if (err == null) {
+                    document.getElementById('generatedLink').value = link;
+                } else {
+                    document.getElementById('generatedLink').value = err;
+                }
+            });
+  }
+</script>
+<title>Tarek's Test Site</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link href="css/bootstrap.css" rel="stylesheet">
 
 </head>
+
 <body>
 
-  <div id= "splashscreen" >
-    <div class="text-center center">
-    <img class ="img-rescale img-circle" src="face.png"></img>
-    <h2 id="demo"><b>Viet Nguyen</b></h2>
-      <Input type="text" placeholder="Password" id="password" size="15"></input>
-      <Input id="submit_button" type="submit" onclick="checkPassword()"></input>
+	<div class="container">
+
+      <div class="row col-lg-8 col-lg-offset-2">
+      <h2>Tarek's Test Site</h2>
+    </div>
+    <section>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Set Data</h4>
+          <button class="btn btn-info" onclick="setTheData()">Set</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Buy!</h4>
+          <button class="btn btn-info" onclick="buyEvent()">Buy</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Show the Journey</h4>
+          <button class="btn btn-info" onclick="showJourney()">Show Journey</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Set the Identity</h4>
+          <button class="btn btn-info" onclick="setTheIdentity()">Set Identity</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Log Out</h4>
+          <button class="btn btn-info" onclick="logTheUserOut()">Logout</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Get the Data</h4>
+          <button class="btn btn-info" onclick="getTheLATD()">LATD</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Make a Link</h4>
+          <button class="btn btn-info" onclick="makeLink()">Link</button>
+        </div>
         <br>
-      <input type="checkbox" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'" checked> Show password
-    </div>
-  </div>
-
-<div id="information">
-
-  <!-- Container (About Section) -->
-  <div id="aboutme" class="container-fluid text-center sectionPadding div-parameters">
-    <div class="row">
-      <div class="col-sm-5">
-        <h1 style="font-size:100px">Hello World!</h1>
-        <h2>I am Viet. A software developer.</h2><br>
-        <p style="font-size:18px;">I graduated from San Jose State University in 2016 with a Bachelor's in Computer Science. I aim to be a backend developer. I love to solve complex puzzles.
-        If i am staring at code all day long i am most likely playing video games, watching a movie or playing with my dog.</p>
+        <textarea class="form-control" style="height:40px; margin-bottom:5%;" id="generatedLink" type="text"></textarea>
       </div>
-      <div class="col-sm-7">
-        <img src="mypicture.jpg" class="img-circle" style="width:400px; height:400px;"></img>
-        <img src="Loki.jpg" class="img-circle" style="width:400px; height:400px;"></img>
-    </div>
-  </div>
-</div>
-
-  <div class="parallax">
-    <h1 class="text-center parallax-text">Skills</h1>
-  </div>
-
-  <div id="skills" class="container-fluid text-center sectionPadding div-parameters">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1>Languages</h1>
-        <p class= "boxed">C</p>
-        <p class= "boxed">Java</p>
-        <p class= "boxed">Python</p>
-        <p class= "boxed">JavaScript</p>
-        <p class= "boxed">HTML</p>
-        <p class= "boxed">PHP</p>
-        <p class= "boxed">SQL</p>
-        <p class= "boxed">Objective-C</p>
+      </section>
+      <!-- <section>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Test Links:</h4>
+          <button class="btn btn-info" onclick="window.location.href='https://bit.ly/2RHntbL'">Bitly Link</button>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <h1>Tools</h1>
-        <p class= "boxed">Git + Github</p>
-        <p class= "boxed">Microsoft Office</p>
-        <p class= "boxed">Photoshop</p>
-        <p class= "boxed">Eclipse</p>
-        <p class= "boxed">AGILE</p>
-        <p class= "boxed">XCode</p>
+      <br>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+          <button class="btn btn-info" onclick="window.location.href='http://click.cameo-email.com/?qs=c416ba0fc68cf4d3a1740255a03c8e889b776fc7d471c4bd1b924b1d825d8440e72f82c98547ff22269709dbcea8e6d866dad8ca555ee8d66447c8a96ac8d876'">Cameo Email Link</button>
+        </div>
       </div>
-  </div>
-</div>
-
-<div class="parallax2">
-  <h1 class="text-center parallax-text">Projects</h1>
-</div>
-
-<div id="projects" class="container-fluid text-center sectionPadding div-parameters">
-
-      <a href="https://github.com/vietqnguyen7/EarthProtector" target="_blank">
-        <img src="earthprotector.png" href="" class="project-img"></img></a>
-      <h1>Earth Protector</h1>
-      <h4>2D Endless game developed on Unity</h4>
-      <p>The game was designed to last for as long as the player can survive.
-        The player is to protect Earth from bullets shot from the alien's ships. The game is also built to run on
-        Android.</p>
-        <br><br>
-
-      <a href="https://github.com/vietqnguyen7/Paint-Program" target="_blank">
-      <img src="Paintprogram.PNG" class="project-img"></img></a>
-      <h1>Paint Program</h1>
-      <h4>Paint program written in C</h4>
-      <p>A paint program written in the C language, that can handle simple tasks like draw a line,
-        bezier curve, rectangle, or circle</p>
-        <br><br>
-
-      <a href="https://github.com/vietqnguyen7/SlotMachine" target="_blank">
-        <img src="Slotmachine.png" class="project-img"></img></a>
-      <h1>Slot Machine</h1>
-      <h4>Slot machine written in Java</h4>
-      <p>A working slot machine game that has different skins. The goal is to
-        spin the wheels and match the pictures in a row. This program follows the Model-View-Controller model</p>
-
-</div>
-
-  <div id="contact" class ="container-fluid text-center" style="padding-top:100px; padding-bottom:100px;">
-    <h1><b>Contact me</b></h1>
-    <a href="mailto:vietqnguyen7@gmail.com"><img src="email.png" alt="Email Link" width="50" height="50"></a>
-    <a href="https://www.linkedin.com/in/vietnguyen5/" target="_blank"><img src="linkedin.png" alt="Linkedin Link" width="50" height="50"></a>
-    <a href="https://github.com/vietqnguyen7/" target="_blank"><img src="contactgithub.png" alt="Github Link" width="50" height="50"></a>
-    <a href="Viet_Nguyen_Resume.pdf" target="_blank"><img src="resume.png" alt="Resume Link" width="50" height="50"></a>
+    </section> -->
   </div>
 
-
-</div>
-
-</body>
-
-<script>
-
-//Typing Animation
-$(document).ready(function(){
-$("#information").hide(0);
-value = "SuperCoder";
-value.split("").forEach(function(elem, index){
-  setTimeout(function(){
-    $("input[type='text']").val($("input[type='text']").val()+elem);
-    }, index* 100);
-    $("input[type=text]").focus();
-  });
-  autoSubmit();
-});
-
-//Compares password to access website
-function checkPassword(){
-  if(document.getElementById('password').value === 'SuperCoder'){
-    $('#splashscreen').fadeOut(1000);
-    $("#information").delay(500).fadeIn(1500);
-  }
-}
-
-//Autosubmit at the beginning of the website
-function autoSubmit(){
-  setTimeout(function(){
-    document.getElementById('submit_button').click();
-  },1500);
-
-}
-
-//Opens the splashscreen again.
-function runSplash(){
-  $('#information').fadeOut(600)
-  $('#splashscreen').fadeIn(1000)
-}
-
-//Animated scrolling script
-$(document).on('click', 'a', function(event){
-    event.preventDefault();
-    $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 1000);
-});
-
-</script>
-</html>
+ </body>
+ </html>
