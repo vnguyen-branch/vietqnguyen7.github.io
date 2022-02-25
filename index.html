@@ -119,18 +119,7 @@
       "$canonical_url": canonicalURL,
       "campaign":"TTSite"
     };
-	branch.link(
-		  {campaign: 'branch_deeplink_test_campaign',
-		   channel: 'instacart_facebook',
-		   feature: 'paid_social',
-		   data: { '$deeplink_no_attribution': true },
-		   identity_id:'drb53xsn49'
-		  }, function(err, link) {
-			console.log(err);
-			  console.log(link_with_utm_params(link));
-			  console.log(link);
-		  }
-/*
+
     branch.link(linkData, function(err, link) {
                 if (err == null) {
                     document.getElementById('generatedLink').value = link;
@@ -138,8 +127,6 @@
                     document.getElementById('generatedLink').value = err;
                 }
             });
-	*/  
-
   }
 </script>
 <title>Tarek's Test Site</title>
