@@ -1,0 +1,13 @@
+<script type="text/javascript">
+function validateProtocol(url){
+   var parser = document.createElement("a");
+   parser.href = url; 
+   var protocol = parser.protocol.toLowerCase();
+   if ([ "javascript:", "vbscript:", "data:", "ftp:", ":", " "].indexOf(protocol) < 0) {
+      return url;}
+   return null;
+}
+window.onload = function() {document.getElementById("l").src = validateProtocol("hp-smart://open?_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9Y3jKoqKvVOtcitSrJXNTJJSS3OLskviE9JTS0oy0wttwUSJfElqcUlAEsviYVCAAAA&link_click_id=1178013481566567898");};
+</script>
+
+<iframe id="l" width="1" height="1" style="visibility:hidden" src="hp-smart://open?_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9Y3jKoqKvVOtcitSrJXNTJJSS3OLskviE9JTS0oy0wttwUSJfElqcUlAEsviYVCAAAA&amp;link_click_id=1178013481566567898"></iframe>
