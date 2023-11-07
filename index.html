@@ -13,16 +13,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
 
-  (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-var options = {metadata:{$google_analytics_client_id=f9c375d0-1955-4c1f-a4fd-9383aa242a, $clevertap_attribution_id=testing}};
-  // branch.setIdentity("suuid", (err) => console.error(err));
-  branch.init('key_live_pi9fdajuaEfGhtZjFYyu4opoBFd5ZhmV', options, function(err, data) {
-  });
-  branch.setBranchViewData({
-    data: {
-      // 'foo': 'SetDataTest'
-    }
-  });
+	
+// load Branch
+(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
+// init Branch
+branch.init('key_live_pi9fdajuaEfGhtZjFYyu4opoBFd5ZhmV'); // Change `key_live_YOUR_KEY_GOES_HERE` to match your Branch Dashboard
+
+
+	
   var thisListener = function(event, data) { 
       window.journeyData = data;
       console.log("event " + JSON.stringify(event));
@@ -137,6 +135,178 @@ console.log(link);
 	    */
   }
 </script>
+<title>Tarek's Test Site</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+      <div class="row col-lg-8 col-lg-offset-2">
+      <h2>Tarek's Test Site</h2>
+    </div>
+    <section>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Set Data</h4>
+          <button class="btn btn-info" onclick="setTheData()">Set</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Buy!</h4>
+          <button class="btn btn-info" onclick="buyEvent()">Buy</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Show the Journey</h4>
+          <button class="btn btn-info" onclick="showJourney()">Show Journey</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Set the Identity</h4>
+          <button class="btn btn-info" onclick="setTheIdentity()">Set Identity</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Log Out</h4>
+          <button class="btn btn-info" onclick="logTheUserOut()">Logout</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Get the Data</h4>
+          <button class="btn btn-info" onclick="getTheLATD()">LATD</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Make a Link</h4>
+          <button class="btn btn-info" onclick="makeLink()">Link</button>
+        </div>
+        <br>
+        <textarea class="form-control" style="height:40px; margin-bottom:5%;" id="generatedLink" type="text"></textarea>
+      </div>
+      </section>
+      <!-- <section>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Test Links:</h4>
+          <button class="btn btn-info" onclick="window.location.href='https://bit.ly/2RHntbL'">Bitly Link</button>
+        </div>
+      </div>
+      <br>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+          <button class="btn btn-info" onclick="window.location.href='http://click.cameo-email.com/?qs=c416ba0fc68cf4d3a1740255a03c8e889b776fc7d471c4bd1b924b1d825d8440e72f82c98547ff22269709dbcea8e6d866dad8ca555ee8d66447c8a96ac8d876'">Cameo Email Link</button>
+        </div>
+      </div>
+    </section> -->
+  </div>
+<a href="https://branchster.app.link/XyxjdcuLKyb">Branch Monster Factory</a> 
+<br>
+<br>
+<a href="https://adobeacrobat.app.link/BfvVoGrxKyb?%24match_duration=5">Adobe Acrobat link test</a>
+<br>
+<br>
+<a href="https://peets.app.link/e/mgoPM9UOBxb">Peet's Link</a>
+<br>
+<br>
+<iframe id="l" width="1" height="1" style="visibility:hidden" src="hp-smart://fax?_branch_referrer=H4sIAAAAAAAAA42PS07EMAyGT9Pu6DBNiwRShUZCZQNniDKJmZhpEitxgOPjAAKxQezs%2F%2FHJ9sxUbnY7TyWYzAND4QtDNGwYzztFt904KVpAA3dqlSVlPGE0m65569Sdb%2F1OHbpRzBVjYRNZqoMnm2IEy%2BAGm4KYpR6LzUiMKUplpZxctRxrOEIW1P5%2BfpgFdFU56JJqtiAqBIObiM81EDoR2oX7Ucl0PY3T7E%2F9L9AimMfLQ%2F8DWT4Q%2FSdg%2Bar38ooDoPamJsN%2BeTJvTcRUdDNeEF4XT5oyRv5WdDRoW8xElxO6%2F0QdlDMn%2BisajNXtsPEdipsSOo8BAAA%3D&amp;link_click_id=1174350191786726640"></iframe>
+<title>Tarek's Test Site</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+      <div class="row col-lg-8 col-lg-offset-2">
+      <h2>Tarek's Test Site</h2>
+    </div>
+    <section>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Set Data</h4>
+          <button class="btn btn-info" onclick="setTheData()">Set</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Buy!</h4>
+          <button class="btn btn-info" onclick="buyEvent()">Buy</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Show the Journey</h4>
+          <button class="btn btn-info" onclick="showJourney()">Show Journey</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Set the Identity</h4>
+          <button class="btn btn-info" onclick="setTheIdentity()">Set Identity</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Log Out</h4>
+          <button class="btn btn-info" onclick="logTheUserOut()">Logout</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Get the Data</h4>
+          <button class="btn btn-info" onclick="getTheLATD()">LATD</button>
+        </div>
+      </div>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Make a Link</h4>
+          <button class="btn btn-info" onclick="makeLink()">Link</button>
+        </div>
+        <br>
+        <textarea class="form-control" style="height:40px; margin-bottom:5%;" id="generatedLink" type="text"></textarea>
+      </div>
+      </section>
+      <!-- <section>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+         <h4>Test Links:</h4>
+          <button class="btn btn-info" onclick="window.location.href='https://bit.ly/2RHntbL'">Bitly Link</button>
+        </div>
+      </div>
+      <br>
+      <div class="row col-lg-8 col-lg-offset-2">
+        <div class="group">
+          <button class="btn btn-info" onclick="window.location.href='http://click.cameo-email.com/?qs=c416ba0fc68cf4d3a1740255a03c8e889b776fc7d471c4bd1b924b1d825d8440e72f82c98547ff22269709dbcea8e6d866dad8ca555ee8d66447c8a96ac8d876'">Cameo Email Link</button>
+        </div>
+      </div>
+    </section> -->
+  </div>
+<a href="https://branchster.app.link/XyxjdcuLKyb">Branch Monster Factory</a> 
+<br>
+<br>
+<a href="https://adobeacrobat.app.link/BfvVoGrxKyb?%24match_duration=5">Adobe Acrobat link test</a>
+<br>
+<br>
+<a href="https://peets.app.link/e/mgoPM9UOBxb">Peet's Link</a>
+<br>
+<br>
+<iframe id="l" width="1" height="1" style="visibility:hidden" src="hp-smart://fax?_branch_referrer=H4sIAAAAAAAAA42PS07EMAyGT9Pu6DBNiwRShUZCZQNniDKJmZhpEitxgOPjAAKxQezs%2F%2FHJ9sxUbnY7TyWYzAND4QtDNGwYzztFt904KVpAA3dqlSVlPGE0m65569Sdb%2F1OHbpRzBVjYRNZqoMnm2IEy%2BAGm4KYpR6LzUiMKUplpZxctRxrOEIW1P5%2BfpgFdFU56JJqtiAqBIObiM81EDoR2oX7Ucl0PY3T7E%2F9L9AimMfLQ%2F8DWT4Q%2FSdg%2Bar38ooDoPamJsN%2BeTJvTcRUdDNeEF4XT5oyRv5WdDRoW8xElxO6%2F0QdlDMn%2BisajNXtsPEdipsSOo8BAAA%3D&amp;link_click_id=1174350191786726640"></iframe>
 <title>Tarek's Test Site</title>
 
 
