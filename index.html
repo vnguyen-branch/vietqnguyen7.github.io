@@ -8,7 +8,10 @@
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
          // init Branch
          branch.init('key_live_pi9fdajuaEfGhtZjFYyu4opoBFd5ZhmV'); // Change `key_live_YOUR_KEY_GOES_HERE` to match your Branch Dashboard
-	 //branch.setBranchViewData( { data: { "$journeys_title": “Mi Title", "$journeys_description": 'Mi descripción'}});
+
+function clickHandler() {
+	branch.setBranchViewData( { data: { "$journeys_title": “Mi Title", "$journeys_description": 'Mi descripción'}});
+    }
       </script>
    </head>
 
@@ -28,6 +31,7 @@
       <h2>Tarek's Test Site</h2>
     </div>
     <section>
+<button type="button" onclick="clickHandler()">Click Me!</button>
       <div class="row col-lg-8 col-lg-offset-2">
         <div class="group">
          <h4>Set Data</h4>
