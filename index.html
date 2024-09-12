@@ -68,6 +68,7 @@
   //   });
   // };
 
+
   function buyEvent () {
     console.log("buying");
     var commerce_data = {"revenue":28.45,
@@ -107,10 +108,8 @@
   };
 
   function logTheUserOut () {
-    console.log("logging out identity");
-    branch.logout(function(err){
-      console.log(err);
-    });
+    console.log("Disable Trackingc");
+    branch.disableTracking(false);
   };
 
   function getTheLATD () {
@@ -186,8 +185,8 @@ body {
       </div>
       <div class="row col-lg-8 col-lg-offset-2">
         <div class="group">
-         <h4>Log Out</h4>
-          <button class="btn btn-info" onclick="logTheUserOut()">Logout</button>
+         <h4>Disable Tracking</h4>
+          <button class="btn btn-info" onclick="logTheUserOut()">Disable Tracking</button>
         </div>
       </div>
       <div class="row col-lg-8 col-lg-offset-2">
